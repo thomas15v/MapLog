@@ -25,4 +25,7 @@ public class BlockAction {
         blockAction.tile = tile;
     }
 
+    public Block getBlock(){
+        return this.block;
+    }
 }

@@ -16,16 +16,18 @@ public class Time {
     public static final String WEEK = "w";
 
     private static final PeriodFormatter PERIOD_FORMATTER = new PeriodFormatterBuilder().
-            appendSeconds().
-            appendSuffix(SECOND).
+            appendWeeks().
+            appendSuffix(WEEK).
+            appendDays().
+            appendSuffix(DAY).
             appendMinutes().
             appendSuffix(MINUTE).
             appendHours().
             appendSuffix(HOUR).
-            appendDays().
-            appendSuffix(DAY).
-            appendWeeks().
-            appendSuffix(WEEK).toFormatter();
+            appendSeconds().
+            appendSuffix(SECOND).
+            toFormatter();
+
 
     public static Period getPeriodFromArguments(String string){
         return PERIOD_FORMATTER.parsePeriod(string);

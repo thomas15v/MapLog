@@ -5,10 +5,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 import org.spongepowered.api.Game;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by thomas on 02/10/14.
@@ -19,7 +16,7 @@ public class BlockInfo {
 
     public BlockInfo()
     {
-        this.blockInformation = new HashMap<DateTime, BlockAction>();
+        this.blockInformation = new TreeMap<DateTime, BlockAction>();
     }
 
     public void addAction(BlockAction blockAction){
@@ -56,10 +53,11 @@ public class BlockInfo {
         DateTime dateTime = DateTime.now().minus(period);
         BlockAction blockAction = null;
         for (DateTime date : blockInformation.keySet()){
-            if (date.isAfter(dateTime))
+            System.out.println(date);
+            if (date.isAfter(dateTime)){
                 blockAction = blockInformation.get(date);
-            else
                 break;
+            }
         }
         return blockAction;
     }

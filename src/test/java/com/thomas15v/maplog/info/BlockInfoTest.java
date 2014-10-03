@@ -8,6 +8,8 @@ import org.joda.time.ReadablePeriod;
 import org.junit.Test;
 import org.spongepowered.api.block.Block;
 
+import java.util.Calendar;
+
 /**
  * Created by thomas on 02/10/14.
  */
@@ -18,7 +20,7 @@ public class BlockInfoTest extends BlockInfo {
         BlockInfo blockInfo = new BlockInfo();
         int time = 59999; //1m in ms - 1
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 10; i >= 0; i--)
             blockInfo.addAction(new BlockAction(null), DateTime.now().minus(time + i*time));
 
         int value = blockInfo.getBlockInformationFromPeriod("3m").size();
@@ -46,11 +48,13 @@ public class BlockInfoTest extends BlockInfo {
         BlockInfo blockInfo = new BlockInfo();
         int time = 59999; //1m in ms - 1
 
-        blockInfo.addAction(new BlockAction(air), DateTime.now().minus(time));
+        blockInfo.addAction(new BlockAction(air), DateTime.now().minus(time*8));
         blockInfo.addAction(new BlockAction(dirt), DateTime.now().minus(time*2));
+        blockInfo.addAction(new BlockAction(air), DateTime.now().minus(time));
 
-        blockInfo.getRollBackAction()
 
+
+        System.out.println(blockInfo.getRollBackAction("1m20s").getBlock().getId());
 
 
     }

@@ -1,6 +1,7 @@
 package com.thomas15v.maplog.util;
 
 import junit.framework.Assert;
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 /**
@@ -33,4 +34,9 @@ public class TimeTest {
         Assert.assertTrue(Time.getPeriodFromArguments("1w").getWeeks() == 1);
     }
 
+    @Test
+    public void testsomecrapformeplease(){
+        System.out.println(new DateTime().getMillis());
+        System.out.println(new DateTime().minus(Time.getPeriodFromArguments("8h")).getMillis());
+    }
 }
