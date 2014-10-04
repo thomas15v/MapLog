@@ -41,6 +41,18 @@
             <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.4.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.5.6</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -69,6 +81,10 @@
                                 <relocation>
                                     <pattern>org.joda</pattern>
                                     <shadedPattern>com.thomas15v.libs.org.joda</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.jooq</pattern>
+                                    <shadedPattern>com.thomas15v.libs.org.jooq</shadedPattern>
                                 </relocation>
                             </relocations>
                             <artifactSet>

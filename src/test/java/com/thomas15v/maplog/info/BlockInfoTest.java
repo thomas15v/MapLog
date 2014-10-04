@@ -41,7 +41,6 @@ public class BlockInfoTest extends BlockInfo {
     @Test
     public void testRollbackForBlock(){
 
-
         BlockInfo blockInfo = new BlockInfo();
         int time = 59999; //1m in ms - 1
 
