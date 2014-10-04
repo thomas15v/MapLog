@@ -30,11 +30,4 @@ public class ArgumentsTest {
     public void notAnInteger() throws IllegalAccessException {
         new Arguments(new String[]{"u:thomas15v", "t:8h", "r:Nooooooooooooooooooooooooooooooooooooo"});
     }
-
-   /* @Test
-    public void wrongTime() throws IllegalAccessException {
-        new Arguments(new String[]{"u:thomas15v", "t:8blabaa", "r:20"});
-    }*/
-
-
 }

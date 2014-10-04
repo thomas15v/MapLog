@@ -35,6 +35,12 @@
             <version>2.4</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -53,10 +59,23 @@
                             <minimizeJar>true</minimizeJar>
                             <relocations>
                                 <relocation>
-                                    <pattern>org.joda.time</pattern>
-                                    <shadedPattern>com.thomas15v.libs.org.joda.time</shadedPattern>
+                                    <pattern>com.esotericsoftware</pattern>
+                                    <shadedPattern>com.thomas15v.libs.com.esotericsoftware</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.objenesis</pattern>
+                                    <shadedPattern>com.thomas15v.libs.org.objenesis</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.joda</pattern>
+                                    <shadedPattern>com.thomas15v.libs.org.joda</shadedPattern>
                                 </relocation>
                             </relocations>
+                            <artifactSet>
+                                <excludes>
+                                    <exclude>org.ow2.asm</exclude>
+                                </excludes>
+                            </artifactSet>
                         </configuration>
                     </execution>
                 </executions>

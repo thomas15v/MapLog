@@ -1,6 +1,6 @@
 package com.thomas15v.maplog.info;
 
-import org.spongepowered.api.GameRegistry;
+import org.joda.time.DateTime;
 import org.spongepowered.api.block.Block;
 
 /**
@@ -10,13 +10,21 @@ public class BlockAction {
 
     private Block block;
     private Object tile;
+    private DateTime dateTime;
+    private String player;
 
-    public BlockAction(Block block){
-       this(block, null);
+
+    public BlockAction(String player, Block block){
+       this("player", block, new DateTime(), null);
     }
 
-    public BlockAction(Block block, Object tile){
+    public BlockAction(String player, Block block, DateTime dateTime){
+        this(player, block, dateTime, null);
+    }
+
+    public BlockAction(String player, Block block, DateTime dateTime, Object tile){
         this.block = block;
+        this.dateTime = dateTime;
         this.tile = tile;
     }
 
@@ -27,5 +35,9 @@ public class BlockAction {
 
     public Block getBlock(){
         return this.block;
+    }
+
+    public DateTime getDateTime() {
+        return dateTime;
     }
 }
