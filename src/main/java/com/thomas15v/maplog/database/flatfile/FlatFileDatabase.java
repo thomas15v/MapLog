@@ -3,8 +3,9 @@ package com.thomas15v.maplog.database.flatfile;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Output;
 import com.thomas15v.maplog.database.Database;
-import com.thomas15v.maplog.info.BlockAction;
+import com.thomas15v.maplog.database.Region;
 import com.thomas15v.maplog.info.BlockInfo;
+import org.spongepowered.api.math.Vector2i;
 import org.spongepowered.api.math.Vector3i;
 
 import java.io.File;
@@ -15,9 +16,9 @@ import java.util.Map;
 /**
  * Created by thomas on 10/4/2014.
  */
-public class FlatFileDatabase implements Database {
+public class FlatFileDatabase extends Database {
 
-    Map<String, Map<Vector3i, BlockInfo>> database = new HashMap<String, Map<Vector3i, BlockInfo>>();
+    Map<String, Map<Vector2i, Region>> database = new HashMap<String, Map<Vector2i, Region>>();
     File folder;
 
     public FlatFileDatabase(File folder) throws Exception {
@@ -26,21 +27,19 @@ public class FlatFileDatabase implements Database {
         this.folder = folder;
     }
 
+
     @Override
     public void storeBlockInfo(String world, Vector3i location, BlockInfo blockInfo) {
-        if (!database.containsKey(world))
-            database.put(world, new HashMap<Vector3i, BlockInfo>());
-        database.get(world).put(location, blockInfo);
+
     }
 
     @Override
     public BlockInfo getBlockInfo(String world, Vector3i location) {
-        return database.get(world).get(location);
+        return null;
     }
 
-    @Override
     public void save() {
-        try {
+       /* try {
             for (String world : database.keySet()){
                 FileOutputStream file = new FileOutputStream(getFileForWorld(world));
                 Output output = new Output(file);
@@ -50,10 +49,21 @@ public class FlatFileDatabase implements Database {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
     }
 
-    private File getFileForWorld(String world){
-        return new File(folder, "world"+ File.pathSeparatorChar + "data.bin");
+    private File getFileForWorldRegion(String world, int x, int z){
+        return new File(folder, "world"+ File.separator + x + "_" + z +".bin");
+    }
+
+
+    @Override
+    protected void loadRegion(String world, int x, int z) {
+
+    }
+
+    @Override
+    protected void unloadRegion(String world, int x, int z) {
+
     }
 }
