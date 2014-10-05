@@ -1,15 +1,12 @@
 package com.thomas15v.maplog.database.flatfile;
 
-import com.esotericsoftware.kryo.Kryo;
-import com.esotericsoftware.kryo.io.Output;
+import com.thomas15v.maplog.database.BlockInfoKey;
 import com.thomas15v.maplog.database.Database;
 import com.thomas15v.maplog.database.Region;
 import com.thomas15v.maplog.info.BlockInfo;
-import org.spongepowered.api.math.Vector2i;
 import org.spongepowered.api.math.Vector3i;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +15,7 @@ import java.util.Map;
  */
 public class FlatFileDatabase extends Database {
 
-    Map<String, Map<Vector2i, Region>> database = new HashMap<String, Map<Vector2i, Region>>();
+    Map<BlockInfoKey, Region> database = new HashMap<BlockInfoKey, Region>();
     File folder;
 
     public FlatFileDatabase(File folder) throws Exception {
@@ -30,11 +27,18 @@ public class FlatFileDatabase extends Database {
 
     @Override
     public void storeBlockInfo(String world, Vector3i location, BlockInfo blockInfo) {
-
+        BlockInfoKey key = new BlockInfoKey(world, location.getX(), location.getZ(), location.getY());
+        if (!database.containsKey(key))
+            database.put(key, new Region());
+        database.get(key).storeBlockInfo(location, blockInfo);
     }
 
     @Override
     public BlockInfo getBlockInfo(String world, Vector3i location) {
+        BlockInfoKey key = new BlockInfoKey(world, location.getX(), location.getZ(), location.getY());
+        if (!database.containsKey(key))
+            database.put(key, new Region());
+        database.get(key).getBlockInfo(location);
         return null;
     }
 
