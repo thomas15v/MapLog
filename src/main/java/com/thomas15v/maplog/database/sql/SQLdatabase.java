@@ -1,6 +1,7 @@
 package com.thomas15v.maplog.database.sql;
 
 import com.thomas15v.maplog.database.Database;
+import com.thomas15v.maplog.database.RegionInfo;
 import com.thomas15v.maplog.info.BlockInfo;
 import org.spongepowered.api.math.Vector3i;
 
@@ -25,12 +26,12 @@ public class SQLdatabase extends Database {
     }
 
     @Override
-    protected void loadRegion(String world, int x, int z) {
+    protected void loadRegion(RegionInfo regionInfo) {
 
     }
 
     @Override
-    protected void unloadRegion(String world, int x, int z) {
+    protected void unloadRegion(RegionInfo regionInfo) {
 
     }
 }

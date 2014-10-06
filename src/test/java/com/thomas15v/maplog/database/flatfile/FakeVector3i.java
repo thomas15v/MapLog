@@ -5,6 +5,8 @@ import org.spongepowered.api.math.Vector3d;
 import org.spongepowered.api.math.Vector3f;
 import org.spongepowered.api.math.Vector3i;
 
+import java.util.Objects;
+
 /**
  * Created by thomas on 04/10/14.
  */
@@ -34,6 +36,18 @@ public class FakeVector3i implements Vector3i {
     @Override
     public int getZ() {
         return z;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Vector3i)
+            return ((Vector3i) obj).getX() == getX() && ((Vector3i) obj).getZ() == getZ() && ((Vector3i) obj).getY() == getY();
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x,y,z);
     }
 
     @Override

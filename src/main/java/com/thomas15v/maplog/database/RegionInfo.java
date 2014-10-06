@@ -55,4 +55,9 @@ public class RegionInfo {
     public int hashCode() {
         return Objects.hash(x,z,world);
     }
+
+    @Override
+    public String toString() {
+        return "RegionInfo( x:"+ x + " z: " + z + " world: " + world  + " )";
+    }
 }

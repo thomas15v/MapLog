@@ -6,7 +6,7 @@ import org.spongepowered.api.math.Vector3i;
 /**
  * Created by thomas on 10/4/2014.
  */
-public abstract class Database extends RegionManager {
+public abstract class Database extends RegionLoadManager {
 
     public abstract void storeBlockInfo(String world, Vector3i location, BlockInfo blockInfo);
 

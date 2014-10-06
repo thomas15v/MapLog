@@ -15,14 +15,16 @@ public class BlockInfo {
 
     private List<BlockAction> blockInformation;
     private static final BlockActionComperator BLOCK_ACTION_COMPERATOR = new BlockActionComperator();
+    private String lol;
 
     public BlockInfo()
     {
         this.blockInformation = new ArrayList<BlockAction>();
     }
 
-    public void addAction(BlockAction blockAction){
+    public BlockInfo addAction(BlockAction blockAction){
         this.blockInformation.add(blockAction);
+        return this;
     }
 
     public BlockAction getRollBackAction(Period period){

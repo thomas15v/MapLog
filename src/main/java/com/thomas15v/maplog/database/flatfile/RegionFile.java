@@ -6,10 +6,7 @@ import com.esotericsoftware.kryo.io.Output;
 import com.thomas15v.maplog.database.Region;
 import com.thomas15v.maplog.database.RegionInfo;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 
 /**
  * Created by thomas on 06/10/14.
@@ -30,7 +27,6 @@ public class RegionFile {
             }else {
                 region = new Region();
                 new File(folder, world).mkdirs();
-                file.createNewFile();
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -39,10 +35,13 @@ public class RegionFile {
 
     public void save(){
         try {
+            file.createNewFile();
             Output output = new Output(new FileOutputStream(file));
             kryo.writeObject(output, this.region);
             output.close();
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
