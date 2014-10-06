@@ -12,5 +12,8 @@ public abstract class Database extends RegionManager {
 
     public abstract BlockInfo getBlockInfo(String world, Vector3i location);
 
+    /**
+     * Flushed the not unloaded data to disk/database
+     */
     public abstract void save();
 }

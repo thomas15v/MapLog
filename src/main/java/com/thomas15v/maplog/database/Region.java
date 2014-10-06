@@ -23,4 +23,8 @@ public class Region {
     public BlockInfo getBlockInfo(Vector3i location) {
         return information.get(location);
     }
+
+    public int getRegionRecordSize(){
+        return information.values().size();
+    }
 }

@@ -7,7 +7,7 @@ import org.spongepowered.api.math.Vector3i;
 /**
  * Created by thomas on 10/4/2014.
  */
-public class SQLdatabase implements Database {
+public class SQLdatabase extends Database {
 
     @Override
     public void storeBlockInfo(String world, Vector3i location, BlockInfo blockInfo) {
@@ -24,4 +24,13 @@ public class SQLdatabase implements Database {
 
     }
 
+    @Override
+    protected void loadRegion(String world, int x, int z) {
+
+    }
+
+    @Override
+    protected void unloadRegion(String world, int x, int z) {
+
+    }
 }
