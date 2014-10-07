@@ -1,4 +1,4 @@
-package com.thomas15v.maplog.database.flatfile;
+package com.thomas15v.maplog.info;
 
 import org.spongepowered.api.math.Vector2i;
 import org.spongepowered.api.math.Vector3d;
@@ -8,16 +8,19 @@ import org.spongepowered.api.math.Vector3i;
 import java.util.Objects;
 
 /**
- * Created by thomas on 04/10/14.
+ * Created by thomas on 07/10/14.
  */
-public class FakeVector3i implements Vector3i {
+
+/**
+ * Temporary Class to Define vectors
+ */
+public class Point implements Vector3i {
 
     private int x;
     private int y;
     private int z;
 
-    public FakeVector3i(int x, int y, int z){
-
+    public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -47,7 +50,7 @@ public class FakeVector3i implements Vector3i {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x,y,z);
+        return Objects.hash(x, y, z);
     }
 
     @Override

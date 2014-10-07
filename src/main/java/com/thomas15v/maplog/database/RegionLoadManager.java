@@ -52,7 +52,7 @@ public abstract class RegionLoadManager {
         }
     }
 
-    protected void calculate(int x, int z){
+    private void calculate(int x, int z){
         x /= 16;
         z /= 16;
     }

@@ -15,7 +15,6 @@ public class BlockInfo {
 
     private List<BlockAction> blockInformation;
     private static final BlockActionComperator BLOCK_ACTION_COMPERATOR = new BlockActionComperator();
-    private String lol;
 
     public BlockInfo()
     {

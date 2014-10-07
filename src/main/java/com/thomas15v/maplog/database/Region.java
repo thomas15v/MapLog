@@ -10,10 +10,10 @@ import java.util.Map;
  * Created by thomas on 05/10/14.
  */
 public class Region {
-    private Map<Vector3i, BlockInfo> information;
+    private Map<Vector3i, Object> information;
 
     public Region(){
-        this.information = new HashMap<Vector3i, BlockInfo>();
+        this.information = new HashMap<Vector3i, Object>();
     }
 
     public void storeBlockInfo(Vector3i location, BlockInfo blockInfo) {
@@ -21,7 +21,7 @@ public class Region {
     }
 
     public BlockInfo getBlockInfo(Vector3i location) {
-        return information.get(location);
+        return (BlockInfo) information.get(location);
     }
 
     public int getRegionRecordSize(){
