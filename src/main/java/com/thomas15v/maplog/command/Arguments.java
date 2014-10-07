@@ -52,8 +52,6 @@ public class Arguments {
     }
 
     private void validate() throws IllegalAccessException {
-        if (getUsername() == null)
-            throw new IllegalArgumentException("An username is required!");
         if (getPeriod() == null)
             throw  new IllegalArgumentException("We need a time to function");
         if (getRadius() == 0)
