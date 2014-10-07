@@ -35,7 +35,8 @@ public class RegionFile {
 
     public void save(){
         try {
-            file.createNewFile();
+            if (!file.exists())
+                file.createNewFile();
             Output output = new Output(new FileOutputStream(file));
             kryo.writeObject(output, this.region);
             output.close();
