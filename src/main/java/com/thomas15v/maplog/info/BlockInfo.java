@@ -53,17 +53,14 @@ public class BlockInfo {
 
     private BlockAction getLastInformationFromPeriod(Period period){
         DateTime dateTime = DateTime.now().minus(period);
-        BlockAction blockAction = null;
         for (BlockAction action : getBlockInformation()){
             System.out.println(action.getBlock().getId());
             if (action.getDateTime().isAfter(dateTime)){
-                blockAction = action;
-                System.out.println("return");
-                break;
+                return action;
             }
         }
         System.out.println();
-        return blockAction;
+        return null;
     }
 
     public List<BlockAction> getBlockInformation() {
