@@ -7,13 +7,9 @@ import com.thomas15v.maplog.info.Point;
 import junit.framework.Assert;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
-import org.junit.runner.RunWith;
-import org.powermock.modules.junit4.PowerMockRunner;
-import org.spongepowered.api.block.Block;
-import org.spongepowered.api.math.Vector3i;
+import org.spongepowered.api.block.Block;;
 
 import java.io.File;
-import java.nio.file.FileSystem;
 
 /**
  * Created by thomas on 04/10/14.
@@ -71,6 +67,6 @@ public class FlatFileDatabaseTest {
             database1.storeBlockInfo("dontdeleteme", new Point(0,0,0), new BlockInfo().addAction(new BlockAction("thomas", dirt)));
             database1.save();
         }
-        Assert.assertTrue(database1.getBlockInfo("dontdeleteme", new Point(0, 0, 0)).getRollBackAction("5m").getBlock().getId() == dirt.getId());
+        Assert.assertTrue(database1.getBlockInfo("dontdeleteme", new Point(0, 0, 0)).getBlockInformation().get(0).getBlock().getId() == dirt.getId());
     }
 }
