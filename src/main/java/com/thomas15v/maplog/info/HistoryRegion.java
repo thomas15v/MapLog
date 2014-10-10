@@ -2,7 +2,9 @@ package com.thomas15v.maplog.info;
 
 import com.thomas15v.maplog.command.Arguments;
 import com.thomas15v.maplog.database.Database;
+import org.spongepowered.api.entity.Player;
 import org.spongepowered.api.math.Vector3i;
+import org.spongepowered.api.world.World;
 
 /**
  * Created by thomas on 07/10/14.
@@ -17,12 +19,21 @@ public class HistoryRegion {
     private Vector3i point2;
     private String executer;
     private Database database;
+    private World world;
+    private Arguments arguments;
+
+    @Deprecated //Until their is a way to get a world from a player!
+    public HistoryRegion(Arguments arguments, Player player, Database database){
+        this(arguments, player.getName(), /*player.getWorld()*/ null , player.getPosition().toInt() , database);
+    }
 
 
-    public HistoryRegion(Arguments arguments, String executer , Vector3i location, Database database){
-        //todo clean this up noob!!!
+    public HistoryRegion(Arguments arguments, String executer, World world, Vector3i location, Database database){
+        //todo clean this up noob!!! Is this cleanable ?
         this.executer = executer;
         this.database = database;
+        this.arguments = arguments;
+        this.world = world;
 
         int x1 = location.getX() + arguments.getRadius();
         int y1 = location.getY() + arguments.getRadius();
@@ -40,10 +51,15 @@ public class HistoryRegion {
 
     public void restore(){
 
+
     }
 
     public void rollback(){
-
+        System.out.println(point1.getX() + " " + point2.getX());
+        for (int x = point2.getX(); x <= point1.getX(); x++)
+            for (int z = point2.getZ(); z <= point1.getZ(); z++)
+                for (int y = point2.getY(); y <= point1.getY(); y++)
+                    new Point(x,y,z);
     }
 
     private void validateHeight(int y){
@@ -58,5 +74,4 @@ public class HistoryRegion {
                 &&  point1.getY() >= location.getY() && location.getY() >= point2.getY()
                 &&  point1.getZ() >= location.getZ() && location.getZ() >= point2.getZ();
     }
-
 }
