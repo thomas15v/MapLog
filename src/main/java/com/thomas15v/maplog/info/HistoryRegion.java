@@ -6,6 +6,9 @@ import org.spongepowered.api.entity.Player;
 import org.spongepowered.api.math.Vector3i;
 import org.spongepowered.api.world.World;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by thomas on 07/10/14.
  */
@@ -22,6 +25,8 @@ public class HistoryRegion {
     private World world;
     private Arguments arguments;
 
+    private Map<Vector3i, BlockAction> blockActions;
+
     @Deprecated //Until their is a way to get a world from a player!
     public HistoryRegion(Arguments arguments, Player player, Database database){
         this(arguments, player.getName(), /*player.getWorld()*/ null , player.getPosition().toInt() , database);
@@ -30,6 +35,7 @@ public class HistoryRegion {
 
     public HistoryRegion(Arguments arguments, String executer, World world, Vector3i location, Database database){
         //todo clean this up noob!!! Is this cleanable ?
+        this.blockActions = new HashMap<Vector3i, BlockAction>();
         this.executer = executer;
         this.database = database;
         this.arguments = arguments;
@@ -55,11 +61,19 @@ public class HistoryRegion {
     }
 
     public void rollback(){
-        System.out.println(point1.getX() + " " + point2.getX());
+
+    }
+
+    public void simulate() throws Exception {
+        if (blockActions.size() > 0)
+            throw new Exception("Already Simulated, something went wrong!");
         for (int x = point2.getX(); x <= point1.getX(); x++)
             for (int z = point2.getZ(); z <= point1.getZ(); z++)
-                for (int y = point2.getY(); y <= point1.getY(); y++)
-                    new Point(x,y,z);
+                for (int y = point2.getY(); y <= point1.getY(); y++){
+                    //todo change this
+                    database.getBlockInfo("testworld", new Point(x,y,z)).getRollBackAction(arguments.getPeriod());
+                }
+
     }
 
     private void validateHeight(int y){

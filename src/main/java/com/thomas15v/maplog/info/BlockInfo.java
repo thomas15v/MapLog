@@ -35,13 +35,11 @@ public class BlockInfo {
     }
 
     //I keep this depricated until I know how NBT tags are stored. Than we can talk about NBT compressions using the same system git works.
-    @Deprecated
-    protected List<BlockAction> getBlockInformationFromPeriod(String period){
+    private List<BlockAction> getBlockInformationFromPeriod(String period){
         return getBlockInformationFromPeriod(Time.getPeriodFromArguments(period));
     }
 
-    @Deprecated
-    protected List<BlockAction> getBlockInformationFromPeriod(Period period){
+    private List<BlockAction> getBlockInformationFromPeriod(Period period){
         DateTime dateTime = DateTime.now().minus(period);
         List<BlockAction> information = new ArrayList<BlockAction>();
         for (BlockAction action : getBlockInformation()){
@@ -49,6 +47,11 @@ public class BlockInfo {
                 information.add(action);
         }
         return information;
+    }
+
+    private void merge(BlockAction blockAction, List<BlockAction> blockActions){
+        /*for (BlockAction b : blockActions)
+            blockAction.merge(b);*/
     }
 
     private BlockAction getLastInformationFromPeriod(Period period){

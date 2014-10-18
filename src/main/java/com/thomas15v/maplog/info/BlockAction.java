@@ -40,4 +40,8 @@ public class BlockAction {
     public DateTime getDateTime() {
         return dateTime;
     }
+
+    public static BlockAction getActionFor(BlockAction ... blockActions){
+        return null;
+    }
 }
