@@ -5,20 +5,14 @@ package com.thomas15v.maplog.plugin.world;
  */
 public class Location {
 
-    private String world;
     private int x;
     private int y;
     private int z;
 
     public Location(String world, int x, int y, int z){
-        this.world = world;
         this.x = x;
         this.y = y;
         this.z = z;
-    }
-
-    public String getWorld() {
-        return world;
     }
 
     public int getX() {

@@ -5,8 +5,6 @@ package com.thomas15v.maplog.plugin.world;
  */
 public interface World {
 
-    void breakBlock(int x, int y, int z);
-
-    void placeBlock(int x, int y, int z, String block);
+    void setBlock(Location location);
 
 }
