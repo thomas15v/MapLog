@@ -5,14 +5,16 @@ import com.thomas15v.maplog.plugin.world.Location;
 /**
  * Created by thomas on 18/10/14.
  */
-public class BlockAction implements Action {
+public class BlockAction extends Action {
     private String block;
     private Location location;
-    private
 
-    protected void setBlock(String block) {
+    public BlockAction(String player, String block, Location location) {
+        super(player);
         this.block = block;
+        this.location = location;
     }
+
 
     public String getBlock() {
         return block;
@@ -20,11 +22,6 @@ public class BlockAction implements Action {
 
     @Override
     public void undo() {
-
-    }
-
-    @Override
-    public void redo() {
 
     }
 }

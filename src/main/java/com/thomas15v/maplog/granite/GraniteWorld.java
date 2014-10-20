@@ -1,5 +1,6 @@
 package com.thomas15v.maplog.granite;
 
+import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.World;
 import org.granitemc.granite.api.block.BlockTypes;
 
@@ -15,12 +16,17 @@ public class GraniteWorld implements World {
     }
 
     @Override
-    public void breakBlock(int x, int y, int z) {
-        world.setBlockTypeAtPosition(x, y, z, BlockTypes.air);
+    public void setBlock(Location loc, String block) {
+        world.setBlockTypeAtPosition(loc.getX(), loc.getY(), loc.getZ(), BlockTypes.getByTechnicalName(block));
     }
 
     @Override
-    public void placeBlock(int x, int y, int z, String block) {
-        world.setBlockTypeAtPosition(x, y, z, BlockTypes.getByTechnicalName(block));
+    public String getBlock(Location location) {
+        return null;
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }

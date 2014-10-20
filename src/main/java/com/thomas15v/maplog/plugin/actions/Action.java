@@ -3,10 +3,17 @@ package com.thomas15v.maplog.plugin.actions;
 /**
  * Created by thomas on 18/10/14.
  */
-public interface Action {
+public abstract class Action {
 
-    void undo();
+    private String player;
 
-    void redo();
+    public Action(String player){
+        this.player = player;
+    }
 
+    public abstract void undo();
+
+    public String getPlayer() {
+        return player;
+    }
 }

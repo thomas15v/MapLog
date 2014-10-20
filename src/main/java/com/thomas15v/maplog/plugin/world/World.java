@@ -5,6 +5,9 @@ package com.thomas15v.maplog.plugin.world;
  */
 public interface World {
 
-    void setBlock(Location location);
+    void setBlock(Location location, String block);
 
+    String getBlock(Location location);
+
+    String getName();
 }
