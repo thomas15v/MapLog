@@ -1,6 +1,6 @@
-package com.thomas15v.maplog.granite;
+package com.thomas15v.maplog.plugin.granite;
 
-import com.thomas15v.maplog.plugin.Database;
+import com.thomas15v.maplog.plugin.sql.Database;
 import com.thomas15v.maplog.plugin.MapLogPlugin;
 import com.thomas15v.maplog.plugin.world.World;
 import org.granitemc.granite.api.plugin.Plugin;

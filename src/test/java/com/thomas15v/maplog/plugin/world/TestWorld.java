@@ -1,4 +1,4 @@
-package com.thomas15v.maplog;
+package com.thomas15v.maplog.plugin.world;
 
 import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.World;
