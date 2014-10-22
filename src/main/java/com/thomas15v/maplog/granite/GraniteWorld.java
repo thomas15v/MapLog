@@ -1,4 +1,4 @@
-package com.thomas15v.maplog.plugin.granite;
+package com.thomas15v.maplog.granite;
 
 import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.World;
