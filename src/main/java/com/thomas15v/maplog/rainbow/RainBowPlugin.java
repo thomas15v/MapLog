@@ -17,6 +17,11 @@ public class RainBowPlugin implements MapLogPlugin {
     public World getWorldFor(String worldName) {
         return null;
     }
+
+    @Override
+    public void setDisabled(boolean value) {
+
+    }
     //screw this for now
 
 }

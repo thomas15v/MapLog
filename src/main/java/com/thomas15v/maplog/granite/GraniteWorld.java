@@ -21,12 +21,12 @@ public class GraniteWorld implements World {
     }
 
     @Override
-    public String getBlock(Location location) {
-        return null;
+    public String getBlock(Location loc) {
+        return world.getBlock(loc.getX(), loc.getY(), loc.getZ()).getBlockType().getTechnicalName();
     }
 
     @Override
     public String getName() {
-        return null;
+        return world.getLevelName();
     }
 }

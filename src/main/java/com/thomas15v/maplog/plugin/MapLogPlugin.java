@@ -11,5 +11,5 @@ public interface MapLogPlugin {
 
     World getWorldFor(String worldName);
 
-
+    void setDisabled(boolean value);
 }

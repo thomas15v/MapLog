@@ -17,16 +17,16 @@ public class SpongeWorld implements World {
 
     @Override
     public void setBlock(Location location, String block) {
-
+        world.setBlock(null, null); //todo dangit sponge
     }
 
     @Override
     public String getBlock(Location location) {
-        return null;
+        return world.getBlock(null).getId(); //todo dangit sponge
     }
 
     @Override
     public String getName() {
-        return null;
+        return world.getName();
     }
 }

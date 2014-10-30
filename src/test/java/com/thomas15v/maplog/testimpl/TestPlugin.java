@@ -16,7 +16,7 @@ public class TestPlugin implements MapLogPlugin {
     private Map<String, World> worlds;
 
     public TestPlugin(){
-        this.database = new Database();
+        this.database = new Database(null, null, null, null); //todo idk
         this.worlds = new HashMap<String, World>();
     }
 
@@ -28,5 +28,10 @@ public class TestPlugin implements MapLogPlugin {
     @Override
     public World getWorldFor(String worldName) {
         return null;
+    }
+
+    @Override
+    public void setDisabled(boolean value) {
+
     }
 }
