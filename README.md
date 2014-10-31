@@ -10,10 +10,6 @@ This plugin needs to do the following.
 - undo rollback
 - restore
 
-Needs to support the following storage systems
-- Flatfile (currently prefered)
-- mysql (not sure if this will get possible)
-
 Hopefully will get a multi-plugin that supports:
 - Sponge (prefered)
 - Granite
