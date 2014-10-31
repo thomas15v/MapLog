@@ -11,7 +11,7 @@ package com.thomas15v.maplog.plugin.database.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class BlocksRecord extends org.jooq.impl.UpdatableRecordImpl<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord> implements org.jooq.Record9<java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Integer, java.sql.Timestamp, java.lang.String, byte[]> {
 
-	private static final long serialVersionUID = 1446747736;
+	private static final long serialVersionUID = 223190488;
 
 	/**
 	 * Setter for <code>maplog.blocks.id</code>.
@@ -28,28 +28,28 @@ public class BlocksRecord extends org.jooq.impl.UpdatableRecordImpl<com.thomas15
 	}
 
 	/**
-	 * Setter for <code>maplog.blocks.x</code>.
+	 * Setter for <code>maplog.blocks.X</code>.
 	 */
 	public void setX(java.lang.Integer value) {
 		setValue(1, value);
 	}
 
 	/**
-	 * Getter for <code>maplog.blocks.x</code>.
+	 * Getter for <code>maplog.blocks.X</code>.
 	 */
 	public java.lang.Integer getX() {
 		return (java.lang.Integer) getValue(1);
 	}
 
 	/**
-	 * Setter for <code>maplog.blocks.y</code>.
+	 * Setter for <code>maplog.blocks.Y</code>.
 	 */
 	public void setY(java.lang.Integer value) {
 		setValue(2, value);
 	}
 
 	/**
-	 * Getter for <code>maplog.blocks.y</code>.
+	 * Getter for <code>maplog.blocks.Y</code>.
 	 */
 	public java.lang.Integer getY() {
 		return (java.lang.Integer) getValue(2);
@@ -126,14 +126,14 @@ public class BlocksRecord extends org.jooq.impl.UpdatableRecordImpl<com.thomas15
 	}
 
 	/**
-	 * Setter for <code>maplog.blocks.data</code>.
+	 * Setter for <code>maplog.blocks.DATA</code>.
 	 */
 	public void setData(byte[] value) {
 		setValue(8, value);
 	}
 
 	/**
-	 * Getter for <code>maplog.blocks.data</code>.
+	 * Getter for <code>maplog.blocks.DATA</code>.
 	 */
 	public byte[] getData() {
 		return (byte[]) getValue(8);

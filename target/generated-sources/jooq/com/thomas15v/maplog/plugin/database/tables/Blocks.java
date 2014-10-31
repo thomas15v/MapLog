@@ -11,7 +11,7 @@ package com.thomas15v.maplog.plugin.database.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Blocks extends org.jooq.impl.TableImpl<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord> {
 
-	private static final long serialVersionUID = 1730499283;
+	private static final long serialVersionUID = -1005258029;
 
 	/**
 	 * The singleton instance of <code>maplog.blocks</code>
@@ -32,14 +32,14 @@ public class Blocks extends org.jooq.impl.TableImpl<com.thomas15v.maplog.plugin.
 	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>maplog.blocks.x</code>.
+	 * The column <code>maplog.blocks.X</code>.
 	 */
-	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.Integer> X = createField("x", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.Integer> X = createField("X", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>maplog.blocks.y</code>.
+	 * The column <code>maplog.blocks.Y</code>.
 	 */
-	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.Integer> Y = createField("y", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.Integer> Y = createField("Y", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>maplog.blocks.z</code>.
@@ -67,9 +67,9 @@ public class Blocks extends org.jooq.impl.TableImpl<com.thomas15v.maplog.plugin.
 	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, java.lang.String> BLOCKID = createField("blockid", org.jooq.impl.SQLDataType.CHAR.length(128).nullable(false), this, "");
 
 	/**
-	 * The column <code>maplog.blocks.data</code>.
+	 * The column <code>maplog.blocks.DATA</code>.
 	 */
-	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, byte[]> DATA = createField("data", org.jooq.impl.SQLDataType.BLOB.length(65535), this, "");
+	public final org.jooq.TableField<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord, byte[]> DATA = createField("DATA", org.jooq.impl.SQLDataType.BLOB.length(65535), this, "");
 
 	/**
 	 * Create a <code>maplog.blocks</code> table reference

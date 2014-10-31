@@ -11,7 +11,7 @@ package com.thomas15v.maplog.plugin.database;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Maplog extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = -70038137;
+	private static final long serialVersionUID = 1361501145;
 
 	/**
 	 * The singleton instance of <code>maplog</code>
@@ -36,6 +36,7 @@ public class Maplog extends org.jooq.impl.SchemaImpl {
 		return java.util.Arrays.<org.jooq.Table<?>>asList(
 			com.thomas15v.maplog.plugin.database.tables.Blocks.BLOCKS,
 			com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS,
+			com.thomas15v.maplog.plugin.database.tables.SchemaVersion.SCHEMA_VERSION,
 			com.thomas15v.maplog.plugin.database.tables.Worlds.WORLDS);
 	}
 }

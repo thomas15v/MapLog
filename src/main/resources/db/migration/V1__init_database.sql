@@ -1,3 +1,5 @@
+-- V1__init_database.sql
+
 CREATE TABLE players (
 	id BIGINT NOT NULL AUTO_INCREMENT,
 	UUID VARCHAR(36) NOT NULL,

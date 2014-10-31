@@ -11,7 +11,7 @@ package com.thomas15v.maplog.plugin.database.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Players extends org.jooq.impl.TableImpl<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> {
 
-	private static final long serialVersionUID = -300176576;
+	private static final long serialVersionUID = 57005482;
 
 	/**
 	 * The singleton instance of <code>maplog.players</code>
@@ -89,7 +89,7 @@ public class Players extends org.jooq.impl.TableImpl<com.thomas15v.maplog.plugin
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord>>asList(com.thomas15v.maplog.plugin.database.Keys.KEY_PLAYERS_PRIMARY, com.thomas15v.maplog.plugin.database.Keys.KEY_PLAYERS_ID, com.thomas15v.maplog.plugin.database.Keys.KEY_PLAYERS_UUID);
+		return java.util.Arrays.<org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord>>asList(com.thomas15v.maplog.plugin.database.Keys.KEY_PLAYERS_PRIMARY);
 	}
 
 	/**

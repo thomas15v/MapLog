@@ -11,11 +11,11 @@ import java.util.UUID;
 public interface Player {
 
     UUID getUUID();
-    void setUUID(UUID uuid);
+    //void setUUID(UUID uuid);
 
     String getUserName();
-    void setUserName(String name);
+    //void setUserName(String name);
 
     Timestamp getLastSeen();
-    void setLastSeen(Timestamp lastSeen);
+    //void setLastSeen(Timestamp lastSeen);
 }

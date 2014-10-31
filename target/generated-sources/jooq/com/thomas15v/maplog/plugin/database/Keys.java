@@ -28,8 +28,7 @@ public class Keys {
 
 	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord> KEY_BLOCKS_PRIMARY = UniqueKeys0.KEY_BLOCKS_PRIMARY;
 	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_PRIMARY = UniqueKeys0.KEY_PLAYERS_PRIMARY;
-	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_ID = UniqueKeys0.KEY_PLAYERS_ID;
-	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_UUID = UniqueKeys0.KEY_PLAYERS_UUID;
+	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.SchemaVersionRecord> KEY_SCHEMA_VERSION_PRIMARY = UniqueKeys0.KEY_SCHEMA_VERSION_PRIMARY;
 	public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.WorldsRecord> KEY_WORLDS_PRIMARY = UniqueKeys0.KEY_WORLDS_PRIMARY;
 
 	// -------------------------------------------------------------------------
@@ -50,8 +49,7 @@ public class Keys {
 	private static class UniqueKeys0 extends org.jooq.impl.AbstractKeys {
 		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.BlocksRecord> KEY_BLOCKS_PRIMARY = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.Blocks.BLOCKS, com.thomas15v.maplog.plugin.database.tables.Blocks.BLOCKS.ID);
 		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_PRIMARY = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS, com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS.ID);
-		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_ID = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS, com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS.ID);
-		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord> KEY_PLAYERS_UUID = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS, com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS.UUID);
+		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.SchemaVersionRecord> KEY_SCHEMA_VERSION_PRIMARY = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.SchemaVersion.SCHEMA_VERSION, com.thomas15v.maplog.plugin.database.tables.SchemaVersion.SCHEMA_VERSION.VERSION);
 		public static final org.jooq.UniqueKey<com.thomas15v.maplog.plugin.database.tables.records.WorldsRecord> KEY_WORLDS_PRIMARY = createUniqueKey(com.thomas15v.maplog.plugin.database.tables.Worlds.WORLDS, com.thomas15v.maplog.plugin.database.tables.Worlds.WORLDS.ID);
 	}
 }

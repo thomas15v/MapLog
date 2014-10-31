@@ -24,6 +24,11 @@ public class Tables {
 	public static final com.thomas15v.maplog.plugin.database.tables.Players PLAYERS = com.thomas15v.maplog.plugin.database.tables.Players.PLAYERS;
 
 	/**
+	 * The table maplog.schema_version
+	 */
+	public static final com.thomas15v.maplog.plugin.database.tables.SchemaVersion SCHEMA_VERSION = com.thomas15v.maplog.plugin.database.tables.SchemaVersion.SCHEMA_VERSION;
+
+	/**
 	 * The table maplog.worlds
 	 */
 	public static final com.thomas15v.maplog.plugin.database.tables.Worlds WORLDS = com.thomas15v.maplog.plugin.database.tables.Worlds.WORLDS;
