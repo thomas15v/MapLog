@@ -4,6 +4,8 @@ import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.World;
 import org.granitemc.granite.api.block.BlockTypes;
 
+import java.util.UUID;
+
 /**
  * Created by thomas on 10/19/2014.
  */
@@ -28,5 +30,10 @@ public class GraniteWorld implements World {
     @Override
     public String getName() {
         return world.getLevelName();
+    }
+
+    @Override
+    public UUID getUUID() {
+        return null;
     }
 }

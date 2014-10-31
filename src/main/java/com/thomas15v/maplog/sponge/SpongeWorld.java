@@ -4,6 +4,8 @@ import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.World;
 import org.spongepowered.api.entity.Player;
 
+import java.util.UUID;
+
 /**
  * Created by thomas on 18/10/14.
  */
@@ -28,5 +30,10 @@ public class SpongeWorld implements World {
     @Override
     public String getName() {
         return world.getName();
+    }
+
+    @Override
+    public UUID getUUID() {
+        return null;
     }
 }

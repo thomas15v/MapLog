@@ -5,6 +5,7 @@ import com.thomas15v.maplog.plugin.world.World;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by thomas on 20/10/14.
@@ -34,6 +35,11 @@ public class FakeWorld implements World {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public UUID getUUID() {
+        return UUID.fromString("e30da058-6063-11e4-928e-b870f466edab");
     }
 
     @Override

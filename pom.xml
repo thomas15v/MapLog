@@ -13,6 +13,7 @@
         <db.driver>com.mysql.jdbc.Driver</db.driver>
         <db.url>jdbc:mysql://localhost:3306/maplog</db.url>
         <db.username>root</db.username>
+        <db.password></db.password>
     </properties>
 
     <repositories>
@@ -105,6 +106,7 @@
                 <configuration>
                     <url>${db.url}</url>
                     <user>${db.username}</user>
+                    <password>${db.password}</password>
                     <locations>
                         <location>filesystem:src/main/resources/db/migration</location>
                     </locations>
@@ -139,6 +141,7 @@
                         <driver>${db.driver}</driver>
                         <url>${db.url}</url>
                         <user>${db.username}</user>
+                        <password>${db.password}</password>
                     </jdbc>
 
                     <!-- Generator parameters -->

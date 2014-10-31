@@ -5,6 +5,7 @@ import com.thomas15v.maplog.plugin.MapLogPlugin;
 import com.thomas15v.maplog.plugin.database.tables.records.PlayersRecord;
 import com.thomas15v.maplog.plugin.world.Location;
 import com.thomas15v.maplog.plugin.world.Player;
+import com.thomas15v.maplog.plugin.world.World;
 import org.jooq.Condition;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
@@ -29,16 +30,6 @@ public class Database {
     private MapLogPlugin plugin;
     private DSLContext create = null;
 
-    private final String PLAYER_SCHEME = "CREATE TABLE players (\n" +
-            "\tid BIGINT NOT NULL AUTO_INCREMENT UNIQUE,\n" +
-            "\tUUID VARCHAR(36) NOT NULL UNIQUE,\n" +
-            "\tUserName CHAR(16) NOT NULL,\n" +
-            "\tLastSeen DATETIME NOT NULL,\n" +
-            "\tPRIMARY KEY(id),\n" +
-            "\tKEY uuidname(UUID)\n" +
-            ");";
-
-
     public Database(String username, String password, String url, MapLogPlugin plugin){
         this.username = username;
         this.password = password;
@@ -49,16 +40,10 @@ public class Database {
     }
 
     private void checkDatabaseSetup() {
-        /*
-        List<String> tables = create.fetch("SHOW TABLES").getValues(0, String.class);
-        if (!tables.contains("players"))
-            create.fetch(PLAYER_SCHEME);*/
-
         Flyway flyway = new Flyway();
         flyway.setDataSource(url, username, password);
         flyway.migrate();
-
-
+        this.create = DSL.using(conn, SQLDialect.MYSQL);
     }
 
     public void checkConnect(){
@@ -66,7 +51,6 @@ public class Database {
             if (conn == null || conn.isClosed()){
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 this.conn = DriverManager.getConnection(url, username, password);
-                this.create = DSL.using(conn, SQLDialect.MYSQL);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,9 +58,19 @@ public class Database {
         }
     }
 
+    public void updateWorldList(World... worlds){
+        System.out.println(create.newRecord(WORLDS, worlds[0]).getName());
+        //todo look for a jooq way to solve this loops are so juk!!
+        for (World world : worlds)
+            create.insertInto(WORLDS).
+                    set(create.newRecord(WORLDS, world)).
+                    onDuplicateKeyUpdate()
+                    .set(WORLDS.NAME, world.getName()).
+                    execute();
+    }
 
-    public void logBreakBlock(String Player, Location location, String Block){
-
+    public void logBreakBlock(Player Player, Location location, String Block){
+        create.insertInto(BLOCKS).values()
     }
 
     public void onPlayerJoin(Player player){
