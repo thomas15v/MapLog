@@ -16,6 +16,19 @@ Hopefully will get a multi-plugin that supports:
 - MinecraftAPI
 - uch rainbow uch uch
 
+Compilation
+=
+The requirements to compile the plugin are:
+
+- Mysql server
+- Maven 3
+ 
+1. Make a new database called `maplog`.
+2. Change the password and username for your mysql server in the pom.xml
+3. Execute `maven install`
+
+
+
 Constributing
 ======
 - Make sure you add some Unit tests to confirm that your code works.
