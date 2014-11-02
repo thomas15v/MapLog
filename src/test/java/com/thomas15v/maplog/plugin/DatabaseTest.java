@@ -23,33 +23,21 @@ public class DatabaseTest {
                 return UUID.fromString("e30da058-6063-11e4-928e-b870f466edab");
             }
 
-            //@Override
-            public void setUUID(UUID uuid) {
-
-            }
 
             @Override
             public String getUserName() {
                 return "MrBigNoob";
             }
 
-            //@Override
-            public void setUserName(String name) {
-
-            }
 
             @Override
             public Timestamp getLastSeen() {
                 return new Timestamp(System.currentTimeMillis());
             }
 
-            //@Override
-            public void setLastSeen(Timestamp lastSeen) {
-
-            }
         });
         database.updateWorldList(new FakeWorld("FakeWorld"));
-        database.logBreakBlock(new Player() {
+        database.logBlock(new Player() {
             @Override
             public UUID getUUID() {
                 return UUID.fromString("e30da058-6063-11e4-928e-b870f466edab");
@@ -66,7 +54,8 @@ public class DatabaseTest {
                 return new Timestamp(System.currentTimeMillis());
             }
 
-        }, new Location(new FakeWorld("FakeWorld"), 0,0,0), "minecraft.stone");
+        }, new Location(new FakeWorld("FakeWorld"), 0, 0, 0), "minecraft.stone");
+        System.out.println(database.getPlayerIdFor(UUID.fromString("e30da058-6063-11e4-928e-b870f466edab")));
     }
 
 }
